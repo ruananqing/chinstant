@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+
+
+<body>
+<header>
+    <h1>Chinstant</h1>
+    <h3>欢迎您：<span id="username"><%= username %></span></h3>
+</header>
+
+
+
+<div id="listMsgArea">
+    <div class='oneMsg'>
+        <p class='msgDate'>Welcome to Chinstant</p>
+        <span class="msgUsername"><b>Server:</b></span>
+        <p class="msgContent">Chinstant is an interesting chatting zone, have a good time here!</p>
+    </div>
+</div>
+
+<div id="inputField">
+    <input type="text" id="content" placeholder="按Enter也可以发送信息">
+    <input type="button" id="send" value="发送">
+</div>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+    var socket = io();
+    //把输入框内容上传到服务器，emit表示发送
+    $("#send").click(function () {
+        sendMsg();
+    });
+
+    $("#content").keydown(function (e) {
+        if (e.keyCode == 13) {
+            sendMsg();
+        }
+    })
+
+    function sendMsg() {
+        socket.emit("clientMsg", {
+            "username": $("#username").html(),
+            "content": $("#content").val(),
+            "date": new Date()
+        });
+        $("#content").val("");
+    }
+
+    //socket.on表示接收
+    socket.on("listMsg",function (msg) {
+        $("#listMsgArea").prepend("<div class='oneMsg'><p class='msgDate'>" + msg.date + "</p><span class='msgUsername'><b>" + msg.username + "" +"：</b></span><p class='msgContent'>" + msg.content + "</p></div>");
+    });
+</script>
+</body>
+</html>

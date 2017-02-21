@@ -1,0 +1,31 @@
+div {
+    text-align: center;
+    width: 500px;
+    color: white;
+    height: auto;
+    font-size: 50px;
+    padding: 40px;
+    background-color: #ffab00;
+    margin: 0 auto;
+}
+
+#username {
+    font-size: 30px;
+}
+
+
+input[type=text] {
+    display: block;
+    padding:10px;
+    margin: 20px auto;
+    text-align: center;
+    color: #ffab00;
+}
+
+input[type=submit] {
+    border: 5px white solid;
+    color: white;
+    font-size: 30px;
+    background-color: #ffab00;
+    border-radius: 5px;
+}

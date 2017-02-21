@@ -1,0 +1,82 @@
+* {
+    border: 0;
+    margin: 0;
+}
+body {
+    width: 500px;
+    height: 100%;
+    margin: auto;
+    border: 5px solid #ffab00;
+}
+header {
+    padding-bottom: 15px;
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background-color: #ffab00;
+    color: white;
+}
+
+#inputField {
+    height: 100px;
+    width: 100%;
+    padding: 10px 0;
+    background: #ffab00;
+}
+
+#inputField input {
+    font-size: 20px;
+}
+
+#inputField input[type=text] {
+    padding:10px;
+    width: 480px;
+    margin: 5px 0;
+    color: #ffab00;
+    border-radius: 5px;
+}
+
+#inputField input[type=button] {
+    border: 2px white solid;
+    width: 200px;
+    height: 50px;
+    color: white;
+    background-color: #ffab00;
+    border-radius: 5px;
+    display: block;
+    margin: 5px auto;
+}
+
+#listMsgArea {
+    height: 600px;
+    overflow: auto;
+}
+
+.oneMsg {
+    margin: 10px;
+    height: auto;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffab00;
+}
+
+.msgDate {
+    text-align: center;
+    color: white;
+}
+
+.msgUsername {
+    background-color: white;
+    color: #ffab00;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.msgContent {
+    background-color: white;
+    font-size: 20px;
+    color: #ffab00;
+    padding: 3px;
+    margin: 0 0 0 20px;
+    border-radius: 5px;
+}

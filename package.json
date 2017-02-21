@@ -1,0 +1,20 @@
+{
+  "name": "chinstant",
+  "version": "1.0.0",
+  "description": "this is a system for chatting online instantly on browser,which built by nodejs and socket.io technology",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chat"
+  ],
+  "author": "ruananqing",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "socket.io": "^1.7.3"
+  }
+}
